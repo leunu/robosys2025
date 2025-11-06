@@ -3,7 +3,7 @@
 - © 2025 Raito Kaneko
 
 # plusコマンド
-![test]([![test](https://github.com/leunu/robosys2025/actions/workflows/test.yml/badge.svg)](https://github.com/leunu/robosys2025/actions/workflows/test.yml))
+[![test](https://github.com/leunu/robosys2025/actions/workflows/test.yml/badge.svg)](https://github.com/leunu/robosys2025/actions/workflows/test.yml)
 
 # 何をするためのソフトか
 
