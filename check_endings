@@ -1,0 +1,35 @@
+#!/usr/bin/python3
+# SPDX-FileCopyrightText: 2025 raito kaneko 2434.raito@gmial.com
+# SPDX-License-Identifier: BSD-3-Clause
+import sys
+
+def main():
+    # カウント対象のフレーズ
+    targets = ["と思いました。", "と考えました。", "と感じました。", "と受け止めました。"]
+    counts = {target: 0 for target in targets}
+    
+    # 標準入力から全テキストを読み込む
+    text = sys.stdin.read()
+    
+    if not text:
+        return
+
+    # 各フレーズの出現回数を数える
+    for target in targets:
+        counts[target] = text.count(target)
+
+    # 結果の出力
+    print("【文末表現の集計結果】")
+    for target, count in counts.items():
+        print(f"{target}: {count}回")
+
+    # アドバイスの表示
+    total = sum(counts.values())
+    if total > 0:
+        print("\n[アドバイス]")
+        for target, count in counts.items():
+            if count > total * 0.5:
+                print(f"「{target}」が多用されています。他の表現への言い換えを検討してください。")
+
+if __name__ == "__main__":
+    main()

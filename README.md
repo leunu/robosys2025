@@ -1,22 +1,45 @@
-# robosys2025
-- このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
-- © 2025 Raito Kaneko
+# robosys2025 - 文末表現チェッカー
 
-# plusコマンド
 [![test](https://github.com/leunu/robosys2025/actions/workflows/test.yml/badge.svg)](https://github.com/leunu/robosys2025/actions/workflows/test.yml)
 
-# 何をするためのソフトか
+このソフトウェアパッケージは、レポートや講義の感想文における文末表現の偏りを可視化し、推敲を助けるためのツールです。
 
-# 使い方
+## 何をするためのソフトか
+標準入力からテキストを受け取り、以下の4つの文末表現の出現回数をカウントします。
+- 「と思いました。」
+- 「と考えました。」
+- 「と感じました。」
+- 「と受け止めました。」
 
-# どんな環境か
+また、特定の表現が全体の5割を超えている場合には、言い換えを促すアドバイスを表示します。
 
-# テストの結果
+## 使い方
+1. リポジトリをクローンします。
+2. 実行権限を与えます： `chmod +x check_endings`
+3. テキストファイルを読み込ませるか、直接文字を渡します。
 
-# 権利関係
-- このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
-- このパッケージは，Ryuichi Ueda由来のコード（© 2025 Ryuichi Ueda）を利用しています．
-- このパッケージのコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたもの
-です．
-    - [ryuichiueda/my_slides robosys_2025](https://github.com/ryuichiueda/slides_marp/tree/master/prob_robotics_2025)
-- © 2025 Ryuichi Ueda
+実行例：
+\`\`\`bash
+$ echo "私はそう思いました。彼はこう考えました。私はそう思いました。" | ./check_endings
+【文末表現の集計結果】
+と思いました。: 2回
+と考えました。: 1回
+と感じました。: 0回
+と受け止めました。: 0回
+
+[アドバイス]
+「と思いました。」が多用されています。他の表現への言い換えを検討してください。
+\`\`\`
+
+## 必要な環境
+- Python 3.7 〜 3.10 で動作確認済みです。
+- 標準的な Linux 環境（Ubuntuなど）で動作します。
+
+## テストの結果
+GitHub Actions を利用して、正常なカウントができるか、空の入力でエラーにならないか等のテストを自動実行しています。
+
+## 権利関係
+- このソフトウェアパッケージは、3条項BSDライセンスの下、再頒布および使用が許可されます。
+- © 2025 Raito Kaneko
+- このパッケージのコードの一部は、下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）の構成を参考にしています。
+    - [ryuichiueda/my_slides robosys_2025](https://github.com/ryuichiueda/slides_marp/tree/master/robosys2025)
